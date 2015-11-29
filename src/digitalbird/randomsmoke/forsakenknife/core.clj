@@ -9,7 +9,7 @@
 
 (defn verifyconfigfile [config start host hostname user keyfile]
   (is (.equals "" (get config start)))
-  (is (.equals (str "Host " host) (get config (+ start 1)))
+  (is (.equals (str "Host " host) (get config (+ start 1))))
   (is (.equals (str "Hostname " hostname) (get config (+ start 2))))
   (is (.equals (str "User " user) (get config (+ start 3))))
   (is (.equals (str "IdentityFile " keyfile) (get config (+ start 4))))

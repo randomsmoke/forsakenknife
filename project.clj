@@ -1,6 +1,6 @@
 (defproject digitalbird.randomsmoke.forsakenknife "0.1.0-SNAPSHOT"
   :description "testing forsakenknife"
-  :repositories [["local" "file://loneviper"]]
+  :repositories [["local" "file://stormyiron"]]
   :url "https://github.com/randomsmoke/forsakenknife"
   :license {:name "GNU GPL 3"
             :url "http://www.gnu.org/licenses/gpl-3.0.en.html"}

@@ -8,7 +8,7 @@
   (println x "Hello, World!"))
 
 (defn verifyconfigfile [config start host hostname user keyfile]
-  (is (.equals "" (get config start)))
+  (is (.equals "" (nth config start)))
   (is (.equals (str "Host " host) (nth config (+ start 1))))
   (is (.equals (str "Hostname " hostname) (nth config (+ start 2))))
   (is (.equals (str "User " user) (nth config (+ start 3))))

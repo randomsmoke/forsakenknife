@@ -1,4 +1,4 @@
-(ns forsakenknife.core)
+(ns digitalbird.randomsmoke.forsakenknife.core)
 
 (defn foo
   "I don't do a whole lot."

@@ -1,13 +1,11 @@
-(ns digitalbird.randomsmoke.forsakenknife.core
-    [clojure.test :refer :all]
-)
+(ns digitalbird.randomsmoke.forsakenknife.core)
 
 (defn foo
   "I don't do a whole lot."
   [x]
   (println x "Hello, World!"))
 
-(defn verifyconfigfile [config start host hostname user keyfile]
+(defn verifyconfigfile [is config start host hostname user keyfile]
   (is (.equals "" (nth config start)))
   (is (.equals (str "Host " host) (nth config (+ start 1))))
   (is (.equals (str "Hostname " hostname) (nth config (+ start 2))))

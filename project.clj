@@ -1,4 +1,4 @@
-(defproject digitalbird.randomsmoke.forsakenknife "0.1.0-SNAPSHOT"
+(defproject digitalbird.randomsmoke.forsakenknife "0.2.0-SNAPSHOT"
   :description "testing forsakenknife"
   :repositories [["local" "file://stormyiron"]]
   :url "https://github.com/randomsmoke/forsakenknife"

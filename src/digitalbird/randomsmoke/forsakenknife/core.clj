@@ -1,6 +1,6 @@
 (ns digitalbird.randomsmoke.forsakenknife.core)
+(use '[clojure.java.shell :only [sh]])
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn verifypassphrase "Verifies that the passphrase is correct" [is keyfile passphrase]
+  (is (= (get (sh "ssh-keygen" "-f" keyfile "-y" "-P" passphrase)) :exit) 0)
+)

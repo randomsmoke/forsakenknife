@@ -50,15 +50,15 @@
   (is (thrown? RuntimeException (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile2" "ControlMaster auto2" "ControlPath keyfile_%h_%p_%r2")) 0 "host" "hostname" "user" "keyfile")))
 )
 
-(deftest verifyconfigfile-test-happy21
-  (testing "This is a happy path test of verifyconfigfile with two stanzas.")
-  (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host" "Hostname hostname2" "User user2" "IdentityFile keyfile2" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r" "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r")) 1 "host" "hostname" "user" "keyfile")
-)
+;(deftest verifyconfigfile-test-happy21
+;  (testing "This is a happy path test of verifyconfigfile with two stanzas.")
+;  (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host2" "Hostname hostname2" "User user2" "IdentityFile keyfile2" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r" "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r")) 1 "host" "hostname" "user" "keyfile")
+;)
 
-(deftest verifyconfigfile-test-happy22
-  (testing "This is another happy path test of verifyconfigfile with two stanzas.")
-  (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host2" "Hostname hostname2" "User user1" "IdentityFile keyfile1" "ControlMaster auto" "ControlPath keyfile1_%h_%p_%r" "" "Host host1" "Hostname hostname1" "User user1" "IdentityFile keyfile1" "ControlMaster auto" "ControlPath keyfile1_%h_%p_%r")) 1 "host1" "hostname1" "user1" "keyfile1")
-)
+;(deftest verifyconfigfile-test-happy22
+;  (testing "This is another happy path test of verifyconfigfile with two stanzas.")
+;  (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host2" "Hostname hostname2" "User user1" "IdentityFile keyfile1" "ControlMaster auto" "ControlPath keyfile1_%h_%p_%r" "" "Host host1" "Hostname hostname1" "User user1" "IdentityFile keyfile1" "ControlMaster auto" "ControlPath keyfile1_%h_%p_%r")) 1 "host1" "hostname1" "user1" "keyfile1")
+;)
 
 (deftest verifyconfigfile-test-unhappy-blank2
   (testing "This is an unhappy path test of verifyconfigfile.  There is no blank space at the beginning of the second stanza.")

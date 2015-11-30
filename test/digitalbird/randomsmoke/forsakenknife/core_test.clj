@@ -55,10 +55,10 @@
   (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r" "" "Host host21" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r")) 1 "host21" "hostname" "user" "keyfile")
 )
 
-;(deftest verifyconfigfile-test-happy22
-;  (testing "This is another happy path test of verifyconfigfile with two stanzas.")
-;  (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host2" "Hostname hostname2" "User user1" "IdentityFile keyfile1" "ControlMaster auto" "ControlPath keyfile1_%h_%p_%r" "" "Host host1" "Hostname hostname1" "User user1" "IdentityFile keyfile1" "ControlMaster auto" "ControlPath keyfile1_%h_%p_%r")) 1 "host1" "hostname1" "user1" "keyfile1")
-;)
+(deftest verifyconfigfile-test-happy22
+  (testing "This is another happy path test of verifyconfigfile with two stanzas.")
+  (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host2" "Hostname hostname2" "User user1" "IdentityFile keyfile1" "ControlMaster auto" "ControlPath keyfile1_%h_%p_%r" "" "Host host1" "Hostname hostname1" "User user1" "IdentityFile keyfile1" "ControlMaster auto" "ControlPath keyfile1_%h_%p_%r")) 1 "host1" "hostname1" "user1" "keyfile1")
+)
 
 (deftest verifyconfigfile-test-unhappy-blank2
   (testing "This is an unhappy path test of verifyconfigfile.  There is no blank space at the beginning of the second stanza.")
@@ -72,7 +72,7 @@
 
 (deftest verifyconfigfile-test-unhappy-hostname2
   (testing "This is an unhappy path test of verifyconfigfile.  The hostname is wrong in the second stanza.")
-  (is (thrown? RuntimeException (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host" "Hostname hostname2" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r" "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r")) 1 "host" "hostname" "user" "keyfile")))
+  (is (thrown? RuntimeException (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r" "" "Host host" "Hostname hostname2" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r")) 1 "host" "hostname" "user" "keyfile")))
 )
 
 (deftest verifyconfigfile-test-unhappy-user2
@@ -82,7 +82,7 @@
 
 (deftest verifyconfigfile-test-unhappy-identity2
   (testing "This is an unhappy path test of verifyconfigfile.  The identity is wrong in the second stanza.")
-  (is (thrown? RuntimeException (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile2" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r" "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r")) 1 "host" "hostname" "user" "keyfile")))
+  (is (thrown? RuntimeException (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r" "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile2" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r")) 1 "host" "hostname" "user" "keyfile")))
 )
 
 (deftest verifyconfigfile-test-unhappy-controlmaster2

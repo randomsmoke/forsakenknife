@@ -52,7 +52,7 @@
 
 (deftest verifyconfigfile-test-happy21
   (testing "This is a happy path test of verifyconfigfile with two stanzas.")
-  (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r" "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r")) 1 "host" "hostname" "user" "keyfile")
+  (verifyconfigfile (mock-is (new RuntimeException)) (seq (list "" "Host host" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r" "" "Host host21" "Hostname hostname" "User user" "IdentityFile keyfile" "ControlMaster auto" "ControlPath keyfile_%h_%p_%r")) 1 "host21" "hostname" "user" "keyfile")
 )
 
 ;(deftest verifyconfigfile-test-happy22
